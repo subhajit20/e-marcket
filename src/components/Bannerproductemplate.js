@@ -1,5 +1,6 @@
 import React from 'react';
 import { Slide } from "react-awesome-reveal";
+import { Link } from 'react-router-dom'
 
 function Bannerproduct({ profImg }) {
     return (
@@ -13,7 +14,7 @@ function Bannerproduct({ profImg }) {
                         <li className='font-normal mb-4 text-3xl sm:mb-8 md:text-white sm:text-slate-700  lg:text-slate-700  font-serif sm:text-5xl md:text-6xl lg:text-8xl'>New Season</li>
                     </Slide>
                     <Slide direction='up' duration={4000} triggerOnce={true}>
-                        <li><a href='/yu' className='rounded-[1.3rem] cursor-pointer hover:bg-zinc-900 hover:text-slate-50 py-2 px-2 text-sm sm:px-4 sm:py-2 md:bg-[#FFD9DA] md:text-[#1B2021] md:px-4 md:py-3  lg:px-4 lg:py-3 bg-slate-700 font-medium font-sans text-white lg:text-xl p-3 lg:bg-[#1B2021] lg:text-[#FFD9DA]'>Shop Now</a></li>
+                        <li><Link to='/yu' className='rounded-[1.3rem] cursor-pointer hover:bg-zinc-900 hover:text-slate-50 py-2 px-2 text-sm sm:px-4 sm:py-2 md:bg-[#FFD9DA] md:text-[#1B2021] md:px-4 md:py-3  lg:px-4 lg:py-3 bg-slate-700 font-medium font-sans text-white lg:text-xl p-3 lg:bg-[#1B2021] lg:text-[#FFD9DA]'>Shop Now</Link></li>
                     </Slide>
                 </ul>
             </div>
