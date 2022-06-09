@@ -1,15 +1,17 @@
 import React from 'react'
-import Navbar from "./components/Navbar";
-import Bannerproduct from "./components/Bannerproduct";
+import Homepage from './components/Homepage';
+import { Routes, Route } from 'react-router-dom';
+import Productpage from './components/Productpage';
 // import ScreenLoader from "./components/ScreenLoader"
 
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Bannerproduct />
-    </div>
+    <Routes>
+      <Route element={<Homepage />}>
+        <Route path='/' element={<Productpage />} />
+      </Route>
+    </Routes>
   );
 }
 
