@@ -1,18 +1,19 @@
-import React from 'react'
-import Navbar from './Navbar'
-import { Outlet } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import React, { useContext } from 'react';
+import Bannerproductemplate from './Bannerproductemplate';
+import ProductCardTemplate from './ProductCardTemplate'
+import BannerSlider from './BannerSlider';
+import Storecontext from '../context/Storecontext';
 
 function Homepage() {
+    const myContext = useContext(Storecontext);
+    console.log(myContext)
     return (
-        <motion.div initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-                duration: 0.4
-            }}>
-            <Navbar />
-            <Outlet />
-        </motion.div>
+        <div>
+            <BannerSlider slide1={<Bannerproductemplate profImg={'model1.png'} />}
+                slide2={<Bannerproductemplate profImg={'model3.png'} />}
+                slide3={<Bannerproductemplate profImg={'headphone.png'} />} />
+            <ProductCardTemplate />
+        </div>
     )
 }
 

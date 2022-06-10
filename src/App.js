@@ -1,15 +1,14 @@
 import React from 'react'
 import Homepage from './components/Homepage';
 import { Routes, Route } from 'react-router-dom';
-import Productpage from './components/Productpage';
-// import ScreenLoader from "./components/ScreenLoader"
+import HomeNavigation from './components/HomeNavigation';
 
 
 function App() {
   return (
     <Routes>
-      <Route element={<Homepage />}>
-        <Route path='/' element={<Productpage />} />
+      <Route element={<HomeNavigation />}>
+        <Route path='/' element={<Homepage />} />
       </Route>
     </Routes>
   );
