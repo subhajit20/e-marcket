@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { AttentionSeeker } from 'react-awesome-reveal'
 
 function Navbar() {
+    const [theme, setTheme] = useState(true)
+    function changeTheme() {
+        if (theme === true) {
+            setTheme(false)
+        } else if (theme === false) {
+            setTheme(true)
+        }
+    }
     return (
         <>
             <motion.div
@@ -12,7 +20,7 @@ function Navbar() {
                 transition={{
                     duration: 0.4
                 }}
-                className="flex justify-between justify-items-center sm:justify-around p-3 sm:p-0 fixed w-full text-[#153131]  sm:text-[#160227] sm:bg-[#FFAD05] z-30 top-0 sm:shadow-2xl" >
+                className="flex justify-between justify-items-center sm:justify-around p-3 sm:p-0 fixed w-full text-[#153131]  sm:text-[#160227] bg-[#FFAD05] z-30 top-0 shadow-md shadow-slate-900" >
                 <div className="sm:mr-10 sm:p-3">
                     <ul className='flex justify-between'>
                         <AttentionSeeker effect={'bounce'}>
@@ -31,15 +39,14 @@ function Navbar() {
                         <li className="sm:py-1 font-medium transition-all rounded-3xl  duration-500  sm:text-xl sm:px-3 text-[#F7EDE2] sm:text-[#000000]"><Link to="/" ><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-10 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg></Link></li>
-                        <li className="sm:py-1 font-medium transition-all rounded-3xl duration-500 sm:text-xl sm:px-3 sm:text-[#000000]"><Link to="/d" ><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-10 sm:h-6 sm:w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg></Link></li>
+                        <li className="cursor-pointer  font-medium transition-all rounded-3xl duration-500 sm:text-xl sm:px-3 sm:text-[#000000]" onClick={changeTheme}>{theme ? <i class="fa-solid fa-moon text-xl sm:text-2xl"></i> : <i class="fa-solid fa-sun text-xl sm:text-2xl"></i>}</li>
                     </ul>
                 </div>
             </motion.div>
         </>
     )
 }
+
 
 export default Navbar
 
