@@ -6,7 +6,7 @@ function ProductCardTemplate() {
     return (
         <>
             <Categoryheading />
-            <div className='flex justify-center m-10 sm:m-20 flex-wrap'>
+            <div className='flex justify-center m-10 sm:m-20 flex-wrap '>
                 <ProductCard />
                 <ProductCard />
                 <ProductCard />

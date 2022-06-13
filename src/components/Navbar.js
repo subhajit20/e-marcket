@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { AttentionSeeker } from 'react-awesome-reveal'
+import Storecontext from '../context/Storecontext';
 
 function Navbar() {
+    const { state, myFunc } = useContext(Storecontext);
     const [theme, setTheme] = useState(true)
+    console.log(state.darkmode)
     function changeTheme() {
         if (theme === true) {
+            myFunc({ type: 'DARK', mode: "black" })
             setTheme(false)
         } else if (theme === false) {
+            myFunc({ type: 'DARK', mode: "white" })
             setTheme(true)
         }
     }
@@ -39,7 +44,7 @@ function Navbar() {
                         <li className="sm:py-1 font-medium transition-all rounded-3xl  duration-500  sm:text-xl sm:px-3 text-[#F7EDE2] sm:text-[#000000]"><Link to="/" ><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-10 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg></Link></li>
-                        <li className="cursor-pointer  font-medium transition-all rounded-3xl duration-500 sm:text-xl sm:px-3 sm:text-[#000000]" onClick={changeTheme}>{theme ? <i class="fa-solid fa-moon text-xl sm:text-2xl"></i> : <i class="fa-solid fa-sun text-xl sm:text-2xl"></i>}</li>
+                        <li className="cursor-pointer  font-medium transition-all rounded-3xl duration-500 sm:text-xl sm:px-3 sm:text-[#000000]" onClick={changeTheme}>{theme ? <i className="fa-solid fa-moon text-xl sm:text-2xl"></i> : <i className="fa-solid fa-sun text-xl sm:text-2xl"></i>}</li>
                     </ul>
                 </div>
             </motion.div>
