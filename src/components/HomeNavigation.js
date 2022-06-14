@@ -5,16 +5,16 @@ import { motion } from 'framer-motion';
 import Storecontext from '../context/Storecontext';
 
 let initialState = {
-    darkmode: "",
-    lightmode: ""
+    darkmode: {
+        background: "[#FFAD05]",
+        text_color: "black"
+    },
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case "DARK":
-            return { darkmode: action.mode }
-        case 'LIGHT':
-            return { darkmode: action.mode }
+        case "THEME_CHANGE":
+            return { darkmode: { background: action.background, text_color: action.textcolor } }
         default:
             return state
     }
