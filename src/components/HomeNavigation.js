@@ -6,7 +6,7 @@ import Storecontext from '../context/Storecontext';
 
 let initialState = {
     darkmode: {
-        background: "[#FFAD05]",
+        background: "bg-[#FEEA00]",
         text_color: "black"
     },
 }

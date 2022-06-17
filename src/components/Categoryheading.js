@@ -6,4 +6,4 @@ function Categoryheading() {
     )
 }
 
-export default Categoryheading
+export default React.memo(Categoryheading)
