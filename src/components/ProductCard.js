@@ -35,7 +35,7 @@ function ProductCard() {
                 </div>
                 <div className='mt-5 flex justify-between'>
                     <span className='font-bold font-sans text-base sm:text-xl'>Men's Clothing</span>
-                    <span className='bg-slate-800 text-gray-50 font-medium px-5  sm:px-6 rounded-3xl'><Link to='/product'>Go</Link></span>
+                    <Link to='/product'><span className='bg-slate-800 text-gray-50 font-medium px-5  sm:px-6 rounded-3xl'>Go</span></Link>
                 </div>
             </motion.div>
         </Slide >
