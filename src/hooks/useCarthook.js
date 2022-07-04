@@ -40,13 +40,21 @@ function useCarthook() {
                 mystate.prod.forEach((x)=>{
                     sum = sum + x.price;
                 })
-                setTotal(sum)
+                setTotal(Number(sum))
             }
         }
         calculateTotalPrice();
     },[mystate.prod])
 
-    return [msg,flag,mystate.prod,total]
+    const decreasePrice = (price) =>{
+        if(mystate.prod.length === 0){
+            setTotal(0)
+        }
+        sum = sum - Number(price);
+        setTotal(sum)
+    }
+
+    return [msg,flag,mystate.prod,total,decreasePrice]
 }
 
 export default useCarthook
