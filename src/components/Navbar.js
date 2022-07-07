@@ -13,10 +13,10 @@ function Navbar() {
 
     const changeTheme = useCallback(() => {
         if (theme === false) {
-            myFunc({ type: 'THEME_CHANGE', background: "bg-[#111827]", textcolor: "white", carttextcolor: 'text-black' })
+            myFunc({ type: 'THEME_CHANGE', background: "bg-[#20232a]", textcolor: "white", carttextcolor: 'text-black',indivisualColor:"bg-[#282c34]" })
             setTheme(true)
         } else if (theme === true) {
-            myFunc({ type: 'THEME_CHANGE', background: "bg-[#fbecfb]", textcolor: "black", carttextcolor: 'text-white' });
+            myFunc({ type: 'THEME_CHANGE', background: "bg-[#fbecfb]", textcolor: "black", carttextcolor: 'text-white',indivisualColor:"bg-[#fbecfb]" });
             setTheme(false)
         }
     }, [theme, myFunc])

@@ -3,6 +3,7 @@ import React, { useReducer } from 'react'
 let initialState = {
     darkmode: {
         background: "bg-[#fbecfb]",
+        individuaTemplateBackground:"bg-[#fbecfb]",
         text_color: "black",
         carttext: "text-white"
     },
@@ -11,7 +12,7 @@ let initialState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case "THEME_CHANGE":
-            return { darkmode: { background: action.background, text_color: action.textcolor, carttext: action.carttextcolor } }
+            return { darkmode: { background: action.background, text_color: action.textcolor, carttext: action.carttextcolor,individuaTemplateBackground:action.indivisualColor } }
         default:
             return state
     }
