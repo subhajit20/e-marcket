@@ -5,14 +5,15 @@ let initialState = {
         background: "bg-[#fbecfb]",
         individuaTemplateBackground:"bg-[#fbecfb]",
         text_color: "black",
-        carttext: "text-white"
+        carttext: "text-white",
+        cartTemplateColor:"bg-gradient-to-tr from-purple-200 via-purple-400 to-purple-800"
     },
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
         case "THEME_CHANGE":
-            return { darkmode: { background: action.background, text_color: action.textcolor, carttext: action.carttextcolor,individuaTemplateBackground:action.indivisualColor } }
+            return { darkmode: { background: action.background, text_color: action.textcolor, carttext: action.carttextcolor,individuaTemplateBackground:action.indivisualColor,cartTemplateColor:action.cartColor } }
         default:
             return state
     }
