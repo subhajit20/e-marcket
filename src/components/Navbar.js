@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { AttentionSeeker } from 'react-awesome-reveal'
 import { Storecontext } from '../context/UserContextProvider';
-import { MyCartcontext } from '../context/Cartcontext'
+import { MyCartcontext } from '../context/Cartcontext';
 
 
 function Navbar() {

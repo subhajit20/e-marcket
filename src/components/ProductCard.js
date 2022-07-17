@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Slide } from 'react-awesome-reveal'
 
-function ProductCard() {
+function ProductCard({catname}) {
     const [love, setLove] = useState(true)
 
     function handleClick() {
@@ -35,7 +35,7 @@ function ProductCard() {
                 </div>
                 <div className='mt-5 flex justify-between'>
                     <span className='font-bold font-sans text-base sm:text-xl'>Men's Clothing</span>
-                    <Link to='/product'><span className='bg-slate-800 text-gray-50 font-medium px-5  sm:px-6 rounded-3xl'>Go</span></Link>
+                    <Link to={`/product/${catname}`}><span className='bg-slate-800 text-gray-50 font-medium px-5  sm:px-6 rounded-3xl'>Go</span></Link>
                 </div>
             </motion.div>
         </Slide >

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 let colorpalate = ['bg-[#e2effc]', 'bg-[#bff3d2]', 'bg-[#edddf1]', 'bg-[#adb9f4]', 'bg-[#b8ff52]', 'bg-[#d4f7e3]', 'bg-[#f3d2ff]', 'bg-[#e8e6e5]']
 
-function Individualproductcard({ title, price, image }) {
+function Individualproductcard({ title, price, image,catname }) {
     const [color, setColor] = useState();
     const [cart, setCart] = useState(false);
     const {mycart} = useContext(MyCartcontext);
@@ -51,7 +51,7 @@ function Individualproductcard({ title, price, image }) {
                 <span className='text-[#6f2068] font-bold'>{price}$</span>
             </div>
             <div className='px-2 sm:px-5 pb-6 flex justify-between'>
-                <span className='font-light'>Men's running shirt</span>
+                <span className='font-light'>{catname}</span>
             </div>
             <div className='px-2 sm:px-5 pb-4 flex justify-between'>
                 <span className='font-medium'>Sizes</span>
