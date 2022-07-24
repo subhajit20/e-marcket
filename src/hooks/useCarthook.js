@@ -12,7 +12,7 @@ function useCarthook() {
 
     useEffect(()=>{
         const SetMessage = () =>{
-            if(mystate.prod.length >= 3){
+            if(mystate.prod.length >= 10){
                 setMsg(mystate.message)
                 setFlag(true)
                 setTimeout(()=>{
@@ -22,6 +22,10 @@ function useCarthook() {
             }else if(mystate.prod.length === 0){
                     setMsg("You have no cart product yet")
                     setFlag(false)
+            }
+            else if(mystate.prod.length >= 0){
+                // setMsg("You have no cart product yet")
+                setFlag(true)
             }
         }
         

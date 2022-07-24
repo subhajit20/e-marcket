@@ -15,7 +15,7 @@ const reducer = ({prod,flag,message,totalPrice}, action) => {
         *@ O Upto length cart will keep added
         */
         case "ADD":
-            if(prod.length >= 3){
+            if(prod.length >= 10){
                 return {
                     prod,
                     message:"Cart is overloaded",
