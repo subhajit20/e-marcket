@@ -12,6 +12,7 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='/product/*' element={<Individualproduct />} />
         <Route path='/mycart' element={<Mycart />} />
+        <Route path='/products/*' element={<h1 className='relative top-32'>Single</h1>} />
       </Route>
     </Routes>
   );

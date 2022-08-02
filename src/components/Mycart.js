@@ -11,8 +11,13 @@ function Mycart() {
     const {mycart} = useContext(MyCartcontext)
     const [msg,flag,decreasePrice,prod,amount] = useCarthook();
     const handleDelete = (elementDel,productPrice) =>{
-        mycart({type:"DELETE",element:elementDel});
-        decreasePrice(productPrice)
+        const remove = window.prompt("Do you want remove this product ? If yes then write Y or N");
+        if(remove === 'Y' || remove === 'y'){
+            mycart({type:"DELETE",element:elementDel});
+            decreasePrice(productPrice);
+        }else{
+
+        }
     }
     function handleOnchange(e){
         setText(e.target.value)
@@ -27,16 +32,15 @@ function Mycart() {
     return (
         <div className={`flex flex-wrap justify-around h-[100vh] ${state.darkmode.individuaTemplateBackground}`}>
             <div className="relative">
-                    <h1 className={`relative text-center text-3xl top-20 text-${state.darkmode.text_color}`}><Searchbar handleOnchange={handleOnchange} text={`text-${state.darkmode.text_color}`} bg={`${state.darkmode.background}`}/></h1>
-                    {flag === true ? msg : msg}
+                    <h1 className={`relative text-center text-3xl top-20 text-${state.darkmode.text_color}`}><Searchbar handleOnchange={handleOnchange}/></h1>
                     
-                    {flag === false ?  msg :""}
+                    <h1 className={`relative text-center text-3xl top-28 text-${state.darkmode.text_color} font-semibold`}>{flag === false ?  msg :msg}</h1>
                 <div className="flex-col relative top-32 overflow-scroll h-[480px]  scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-blue-300 overflow-y-scroll">
                     {
                        prods.length === 0 ?  prod.map((x,y)=>{
-                                                    return (<Carttemplate images={x.image} title={x.title} price={x.price} key={y} onDelete={()=> handleDelete(y,x.price)} />)
+                                                    return (<Carttemplate id={x.id} images={x.image} title={x.title} price={x.price} key={y} onDelete={()=> handleDelete(y,x.price)} />)
                                                 }) :   prods.map((x,y)=>{
-                                                    return (<Carttemplate images={x.image} title={x.title} price={x.price} key={y} onDelete={()=> handleDelete(y,x.price)} />)
+                                                    return (<Carttemplate id={x.id} images={x.image} title={x.title} price={x.price} key={y} onDelete={()=> handleDelete(y,x.price)} />)
                                                 })
                     }
             </div>
