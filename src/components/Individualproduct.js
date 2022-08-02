@@ -22,7 +22,7 @@ function Individualproduct() {
                 return <Individualproductcard key={y} id={x.id} catname={x.category} title={x.title} price={x.price} image={x.image} />
             }) : <h1 className='relative top-44 '><ScreenLoader/></h1>
         }
-        <h1 className='absolute top-[300px]'>{flag === false ? msg : ""}</h1>
+        <h1 className='absolute top-[300px]'>{flag === true ? msg : ""}</h1>
         </div></div>
     )
 }
