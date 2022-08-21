@@ -7,6 +7,7 @@ let initialstate = {
     username:"",
     u_email:"",
     password:"",
+    confirmpassword:"",
     address:"",
 }
 
