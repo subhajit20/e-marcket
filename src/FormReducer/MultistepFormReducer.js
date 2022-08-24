@@ -8,7 +8,7 @@ let initialstate = {
     u_email:"",
     password:"",
     confirmpassword:"",
-    address:"",
+    phonenumber:""
 }
 
 const MultistepFormReducer = (state,action) =>{
