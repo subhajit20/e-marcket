@@ -1,14 +1,14 @@
-import React,{useState,useEffect} from 'react';
+import {useState} from 'react';
 
 function useSignupHook(){
     const [loading,setLoading] = useState(false);
-    const [response,setResponse] = useState([]);
+    const [flag,setFlag] = useState();
 
     async function CallSignup({...credentials}){
+        let errors;
         const {password,username,firstname,lastname,confirmpassword,u_email,middlename
             ,phonenumber
         } = credentials;
-        console.log(username)
         const callAignupApi = await fetch("https://e-marcket-backend-api.herokuapp.com/u1/signup",{
             method:"POST",
             headers:{
@@ -26,25 +26,27 @@ function useSignupHook(){
             })
         })
         const result = await callAignupApi.json();
-
-
+        errors = [{...result}];
         if(callAignupApi.status === 200){
-            setLoading(true)
-            setTimeout(()=>{
-                console.log(result);
-                setLoading(false);
-                setResponse([...result]);
-            },[3000])
+            errors = result;
+            setLoading(false);
+            setFlag(true);
+           return {
+            errors,loading,
+           };
         }else if(callAignupApi.status !== 200){
-            console.log(result);
-            setLoading(true)
-            setResponse([...result])
+            errors = result.err;
+            setLoading(true);
+            setFlag(false);
+           return {
+            errors,loading,
+           };
+            
         }
+        
     }
 
-    return {
-        loading,response,CallSignup
-    }
+    return {CallSignup,flag}
 }
 
 export default useSignupHook;
