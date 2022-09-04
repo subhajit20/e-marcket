@@ -3,6 +3,7 @@ import {useState} from 'react';
 function useSignupHook(){
     const [loading,setLoading] = useState(false);
     const [flag,setFlag] = useState();
+    const [msg,setMsg] = useState();
 
     async function CallSignup({...credentials}){
         let errors;
@@ -31,6 +32,11 @@ function useSignupHook(){
             errors = result;
             setLoading(false);
             setFlag(true);
+            setMsg("Congratulation! You have successfully created your account :)")
+            setTimeout(()=>{
+                errors = '';
+                setMsg();
+            },3000)
            return {
             errors,loading,
            };
@@ -38,15 +44,20 @@ function useSignupHook(){
             errors = result.err;
             setLoading(true);
             setFlag(false);
+            setMsg('Oh! Seems like you have not fill the form correctly !!')
+            setTimeout(()=>{
+                errors = '';
+                setMsg();
+            },3000)
            return {
-            errors,loading,
+            errors,loading
            };
             
         }
         
     }
 
-    return {CallSignup,flag}
+    return {CallSignup,flag,msg}
 }
 
 export default useSignupHook;
