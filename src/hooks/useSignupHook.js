@@ -10,7 +10,7 @@ function useSignupHook(){
         const {password,username,firstname,lastname,confirmpassword,u_email,middlename
             ,phonenumber
         } = credentials;
-        const callAignupApi = await fetch("https://e-marcket-backend-api.herokuapp.com/u1/signup",{
+        const callAignupApi = await fetch("https://calm-lime-badger-hose.cyclic.app/u1/signup",{
             method:"POST",
             headers:{
                 "content-type":"application/json"
