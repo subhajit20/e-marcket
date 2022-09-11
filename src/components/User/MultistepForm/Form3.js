@@ -20,18 +20,13 @@ function Form3({ password,confirmpassword,phonenumber,handleOnSubmit }) {
     }
   }
 
-  // const Generate_Password = () =>{
-  //   const newPassword = Password_Generator(16);
-  //   setGeneratePass(newPassword);
-  //   console.log(generatePass)
-  // }
-    useEffect(()=>{
-      showErrors(errors)
-
-      return ()=>{
-        showErrors()
+  useEffect(()=>{
+    if(errors === undefined){
+        return 
+    }else{
+        showErrors(errors)
     }
-  },[errors])
+},[errors,showErrors])
 
   return (
     <div className="flex flex-col w-[13rem] sm:w-[20rem] h-28 justify-evenly mb-5">

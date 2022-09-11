@@ -8,12 +8,13 @@ function Form2({username,u_email,handleOnChange}){
     const {usernameErr,u_emailErr,showErrors} = useFormError();
     
     useEffect(()=>{
-        showErrors(errors);
-
-        return ()=>{
-            showErrors()
+        if(errors === undefined){
+            return 
+        }else{
+            showErrors(errors)
         }
-    },[errors])
+
+    },[errors,showErrors])
 
     return <div className="flex flex-col w-[13rem] sm:w-[20rem] h-28 justify-evenly mb-5">
         <div>

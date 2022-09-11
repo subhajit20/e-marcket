@@ -5,14 +5,14 @@ import useFormError from "../../../hooks/useFormError";
 function Form1({ firstname, middlename, lastname, handleChange}) {
     const {errors} = useContext(ErrorContext);
     const {firstnameErr,lastnameErr,showErrors} = useFormError();
-    
     useEffect(()=>{
-        showErrors(errors);
-
-        return ()=>{
-            showErrors()
+        if(errors === undefined){
+            return 
+        }else{
+            showErrors(errors)
         }
-    },[errors])
+
+    },[errors,showErrors])
 
 
     return <div className="flex flex-col w-[13rem] sm:w-[20rem] h-28 justify-evenly mb-5">

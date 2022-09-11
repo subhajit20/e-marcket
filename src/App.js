@@ -7,6 +7,7 @@ import Mycart from './components/Mycart';
 import User from './components/User/User';
 import RegistrationForm from './components/User/RegistrationForm';
 import Login from './components/User/Login_Form';
+import UserProfile from './components/User/UserProfile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route element={<User/>} >
           <Route path='/user/registration' element={<RegistrationForm/>}/>
           <Route path='/user/login' element={<Login/>}/>
+          <Route path='/userprofile' element={<UserProfile/>}/>
         </Route>
       </Route>
       <Route path="*" element={<h1 className='text-4xl'>No Page Found !! 404</h1>} />
