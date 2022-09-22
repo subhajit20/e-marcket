@@ -20,7 +20,7 @@ function App() {
         <Route element={<User/>} >
           <Route path='/user/registration' element={<RegistrationForm/>}/>
           <Route path='/user/login' element={<Login/>}/>
-          <Route path='/userprofile' element={<UserProfile/>}/>
+          <Route path='/user/profile' element={<UserProfile/>}/>
         </Route>
       </Route>
       <Route path="*" element={<h1 className='text-4xl'>No Page Found !! 404</h1>} />

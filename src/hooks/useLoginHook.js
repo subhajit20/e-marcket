@@ -27,14 +27,15 @@ function useLoginHook(){
                     path:'/',
                     expires:expires,
                 } );
+                setSign(false)
                 navigate('/')
                 window.location.reload()
             },3000)
         }else if(flag === false){
-            setSign(false)
             setMsg("Username & password is not valid")
-
+            
             setTimeout(()=>{
+                setSign(false)
                 setMsg("")
             },2000)
             auth({type:"UNAUTHECTICATED USER"});
