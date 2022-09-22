@@ -1,21 +1,10 @@
-import React,{useState} from 'react'
+import React from 'react'
 
 function Searchbar({handleOnchange}) {
-    const [size,setSize] = useState("50px");
-
-    function handleMouseOver(){
-        setSize ("400px")
-    }
-    function handleMouseOut(){
-        setSize("100px")
-    }
-   
-
-   
   return (
     <div className="relative top-5 flex justify-center">
-        <i className="fa-brands fa-searchengin relative text-white left-10 top-2 text-2xl cursor-pointer "></i>
-        <input type="text" className={`p-1 sm:p-2 outline-none bg-[#ED1C24] rounded-full text-white text-2xl w-[${size}] text-center transition-all duration-500 text-xs`}  onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onChange={handleOnchange}/>
+        <i className="fa-brands fa-searchengin relative text-black left-10 top-2 text-xl cursor-pointer"></i>
+        <input type="text" className={`p-1 sm:p-2 sm:px-14 outline-none bg-slate-300 hover:bg-white  rounded-2xl text-base sm:text-2xl w-[220px] sm:w-[300px]  text-center transition-all duration-500 text-black font-bold`}   onChange={handleOnchange}/>
         
     </div>
   )
