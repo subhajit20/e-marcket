@@ -7,6 +7,7 @@ import CLIENT_ID from './Payment_Cedentials';
 
 const currency = "USD";
 function PaymentPage() {
+  window.document.title = "Buy Karo - Payment"
   const {authorize} = useContext(AuthContext);
   const navigate = useNavigate();
   const {pathname} = useLocation();
