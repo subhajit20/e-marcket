@@ -14,6 +14,7 @@ function Individualproduct() {
     const [msg,flag] = useCarthook();
     const {pathname} = useLocation();
     const path = pathname.split("/")[2]
+    window.document.title=`Buy Karo - ${path}`;
     const [prod,flag1] = useProduct(path);
     
     return (

@@ -1,4 +1,4 @@
-import React,{useContext,useState,useEffect} from 'react';
+import React,{useContext,useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import useCarthook from '../hooks/useCarthook';
 import {MyCartcontext} from '../context/Cartcontext';
@@ -14,6 +14,7 @@ function Mycart() {
     const {authorize} = useContext(AuthContext)
     const [msg,flag,decreasePrice,prod,amount] = useCarthook();
     const navigate = useNavigate()
+    window.document.title=`Buy Karo - Cart`;
     const handleDelete = (elementDel,productPrice) =>{
         const remove = window.prompt("Do you want remove this product ? If yes then write Y or N");
         if(remove === 'Y' || remove === 'y'){
@@ -24,27 +25,25 @@ function Mycart() {
         }
     }
     function handleOnchange(e){
-        setText(e.target.value)
-        
+        setText(e.target.value) 
     }
 
     const prods = prod.filter((x)=>{
-            return x.title.toLowerCase().toString().startsWith(text)
-            
+            return x.title.toLowerCase().toString().startsWith(text)    
     })
 
     const BuyNow = () =>{
-        if(authorize){
-            console.log("Okk let's go to byee")
-        }else if(!authorize){
+        if(!authorize){
             navigate('/user/login')
+        }else if(authorize){
+            if(amount <= 0){
+                console.log("Your cart is empty...")
+            }else if(amount > 0){
+                navigate(`/payment/${amount}`)
+            }
         }
     }
-    useEffect(()=>{
-        if(authorize){
-            BuyNow();
-        }
-    },[authorize])
+
     return (
         <div className={`flex-col flex-wrap h-[120vh] ${state.darkmode.individuaTemplateBackground}`}>
             <h1 className={`relative text-center text-3xl top-20 text-${state.darkmode.text_color}`}><Searchbar handleOnchange={handleOnchange}/></h1>

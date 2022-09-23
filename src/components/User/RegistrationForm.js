@@ -11,6 +11,7 @@ export const ErrorContext = React.createContext();
 
 // let formErrors;
 function RegistrationForm(){
+    window.document.title=`Buy Karo - Registration`;
     const {mystate,dispatcher} = useContext(useMultistepFormContext);
     const [page,setPage] = useState(0);
     const [formErrors,setFormErrors] = useState();

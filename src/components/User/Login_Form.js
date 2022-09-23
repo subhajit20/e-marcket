@@ -3,6 +3,7 @@ import ScreenLoader from '../ScreenLoader';
 import useLoginHook from "../../hooks/useLoginHook";
 
 function Login(){
+    window.document.title=`Buy Karo - Login`;
     const [username,setUsername] = useState();
     const [password,setPassword] = useState();
     let {CallLoginApi,msg,sign,mystate} = useLoginHook();

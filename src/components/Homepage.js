@@ -5,6 +5,7 @@ import BannerSlider from './BannerSlider';
 import {Storecontext} from '../context/UserContextProvider'
 
 function Homepage() {
+    window.document.title=`Buy Karo - Home`;
     const { state } = useContext(Storecontext);
     return (
         <div className={` h-auto ${state.darkmode.background}`}>

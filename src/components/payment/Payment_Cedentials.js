@@ -1,0 +1,5 @@
+
+
+const CLIENT_ID = "AcJEC8SfByauk4gmICMozQt5AFuV2XpFd3s_SDgAmh4TuTVt8kbqyp0ZJXH7XdN3BxLnP0KhKzytD_lz"
+
+export default CLIENT_ID;

@@ -8,6 +8,7 @@ import User from './components/User/User';
 import RegistrationForm from './components/User/RegistrationForm';
 import Login from './components/User/Login_Form';
 import UserProfile from './components/User/UserProfile';
+import PaymentPage from './components/payment/PaymentPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/user/profile' element={<UserProfile/>}/>
         </Route>
       </Route>
+      <Route path='/payment/*' element={<PaymentPage/>}/>
       <Route path="*" element={<h1 className='text-4xl'>No Page Found !! 404</h1>} />
     </Routes>
   );

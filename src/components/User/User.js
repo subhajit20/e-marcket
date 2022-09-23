@@ -5,8 +5,8 @@ import {AuthContext} from '../../context/AuthProvider';
 import UserProfile from "./UserProfile";
 
 function User(){
+    window.document.title=`Buy Karo - Registration`;
     const {authorize} = useContext(AuthContext);
-    console.log(authorize)
     return <div className="relative top-20">
             {
                 authorize ? "": <div className="flex justify-between sm:justify-evenly  p-2 font-mono">

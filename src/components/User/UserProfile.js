@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import { useEffect } from 'react';
 
 function UserProfile() {
+  window.document.title=`Buy Karo - ProfilePage`;
   const {authorize,userinfo} = useContext(AuthContext);
   const navigate = useNavigate()
 
